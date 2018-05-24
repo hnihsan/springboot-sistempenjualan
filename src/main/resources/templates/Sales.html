@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/parent :: head_link"></head>
+<body>
+<!-- Start Navigation -->
+<div id="header" th:replace="layout/parent :: header"></div>
+
+<!-- Start Section Content-->
+<section id="content" class="rt-layout rt-content">
+    <div class="container">
+        <br>
+        <div th:if="${not #lists.isEmpty(sales)}">
+            <table>
+                <tr>
+                    <th>No.</th>
+                    <th>Nama Pembeli</th>
+                    <th>Produk Yang Dibeli</th>
+                    <th>Petugas</th>
+                </tr>
+
+                <tr th:each="sale,iter : ${sales}">
+                    <td th:text="${iter.index+1}"></td>
+                    <td th:text="${sale.customer}"></td>
+                    <td>
+                        <ul>
+                            <li th:each="product : ${sale.productsSet}" th:text="${product.name}"></li>
+                        </ul>
+                    </td>
+                    <td th:text="${sale.administrators.name}"></td>
+                </tr>
+
+            </table>
+        </div>
+        <div th:if="${#lists.isEmpty(sales)}">
+            <h5>Belum ada Penjualan, <a th:href="${'/Sales/Tambah'}">Tambah sekarang !</a></h5>
+        </div>
+    </div>
+</section>
+
+<div th:replace="layout/parent :: footer"></div>
+
+</body>
+</html>
+

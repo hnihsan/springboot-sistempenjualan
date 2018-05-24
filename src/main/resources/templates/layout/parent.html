@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+    <head th:fragment="head_link">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+        <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0"/>
+        <title>Sistem Penjualan Cheeky Snack</title>
+
+        <!-- CSS  -->
+        <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+        <link th:href="@{/css/materialize.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+        <link th:href="@{/css/style.css}" type="text/css" rel="stylesheet" media="screen,projection"/>
+    </head>
+    <body>
+        <!-- Start Navigation -->
+    <div id="header" th:fragment="header">
+        <div class="navbar-fixed">
+            <nav class="light-blue lighten-1" role="navigation">
+                <div class="brand-sidebar blue lighten-3 hide-on-small-and-down">
+                    <img id="logo-ubl" th:src="@{/images/budiluhur.png}" class="rt-logo-navbar">
+                    <a href="#" class="brand-logo darken-1">
+                        <span class="logo-text black-text">Cheeky</span>
+                    </a>
+                </div>
+                <div class="nav-wrapper container">
+                    <a href="#" data-target="nav-mobile" class="sidenav-trigger show-on-small"><i class="material-icons">menu</i></a>
+                    <a id="judul-web" href="#" class="brand-logo center hide-on-med-and-down">Sistem Penjualan Cheeky Snack</a></li>
+                    <a id="judul-mobile" href="#" class="brand-logo center hide-on-large-only" >Cheeky Snack</a></li>
+                </div>
+            </nav>
+        </div>
+
+
+        <!-- End Navigation -->
+        <!-- Start Side Navigation -->
+        <ul id="nav-mobile" class="sidenav sidenav-fixed rt-sidenav collapsible" >
+            <li>
+                <div class="user-view">
+                    <div class="background">
+                        <img th:src="@{/images/istana-presiden.jpg}" class="responsive-img">
+                    </div>
+                    <a href="#user"><img class="circle" th:src="@{/images/tony.png}"></a>
+                    <a href="#name"><span class="white-text name">Tony Stark</span></a>
+                    <a href="#email"><span class="white-text email">tonystark@gmail.com</span></a>
+                </div>
+            </li>
+            <li><a class="subheader">Pilihan Menu</a></li>
+            <li>
+                <a class="collapsible-header waves-effect waves-teal">
+                    <i class="material-icons ">verified_user</i>
+                    <span >Administrator</span>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li ><a th:href="@{/Administrators}"><i class="material-icons">format_list_bulleted</i> Lihat Data </a></li>
+                        <li ><a th:href="@{/Administrators/Tambah}"><i class="material-icons">add</i> Tambah </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="collapsible-header waves-effect waves-teal">
+                    <i class="material-icons ">shopping_basket</i>
+                    <span >Produk</span>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li ><a th:href="@{/Products}"><i class="material-icons">format_list_bulleted</i> Lihat Data </a></li>
+                        <li ><a th:href="@{/Products/Tambah}"><i class="material-icons">add</i> Tambah </a></li>
+                    </ul>
+                </div>
+            </li>
+            <li>
+                <a class="collapsible-header waves-effect waves-teal">
+                    <i class="material-icons ">attach_money</i>
+                    <span >Penjualan</span>
+                </a>
+                <div class="collapsible-body">
+                    <ul>
+                        <li ><a th:href="@{/Sales}"><i class="material-icons">format_list_bulleted</i> Lihat Data </a></li>
+                        <li ><a th:href="@{/Sales/Tambah}"><i class="material-icons">add</i> Tambah </a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li><div class="divider"></div></li>
+            <li><a class="subheader">&copy; hnihsan</a></li>
+
+
+        </ul>
+        <!-- End Side Navigation -->
+    </div>
+        <!-- Start Section Content-->
+        <section id="content" class="rt-layout rt-content">
+            <div class="container">
+                <br>
+
+            </div>
+        </section>
+        <!-- End Section Content-->
+        <div id="footer_link" th:fragment="footer">
+        <footer class="page-footer light-blue rt-layout rt-footer" >
+            <div class="container">
+                <div class="row">
+                    <div class="col 12 s12">
+                        <h5 class="white-text">Company Bio</h5>
+                        <p class="grey-text text-lighten-4">We are a team of college students working on this project like it's our full time job. Any amount would help support and continue development on this project and is greatly appreciated.</p>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-copyright">
+                <div class="container">
+                    Made by <a class="white-text text-lighten-3" href="http://materializecss.com">Materialize</a>
+                </div>
+            </div>
+        </footer>
+
+
+        <!--  Scripts-->
+
+            <script th:src="@{/js/materialize.js}"></script>
+            <script>
+                M.AutoInit();
+            </script>
+        </div>
+    </body>
+</html>
+

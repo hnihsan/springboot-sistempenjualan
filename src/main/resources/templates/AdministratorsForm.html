@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/parent :: head_link"></head>
+<body>
+<!-- Start Navigation -->
+<div id="header" th:replace="layout/parent :: header"></div>
+
+<!-- Start Section Content-->
+<section id="content" class="rt-layout rt-content">
+    <div class="container">
+        <br>
+        <form th:object="${administrators}" th:action="@{/Administrators/Tambah}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="row">
+                <div class="input-field col m6 s12">
+                    <input id="email" type="text" class="validate" required th:field="*{email}">
+                    <label for="email">Email</label>
+                </div>
+                <div class="input-field col m6 s12">
+                    <input  id="fullname" type="text" class="validate" required th:field="*{name}">
+                    <label for="fullname">Nama Lengkap</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col m6 l6 s12">
+                    <input type="password"  id="password" class="validate" th:field="*{password}" required>
+                    <label for="password">Password</label>
+                </div>
+                <div class="input-field col m6 l6 s12">
+                    <input type="password"  id="validatepassword" class="validate" required>
+                    <label for="validatepassword">Masukan Ulang Password</label>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+    </div>
+</section>
+
+<div th:replace="layout/parent :: footer"></div>
+
+</body>
+</html>
+

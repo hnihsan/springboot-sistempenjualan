@@ -1,0 +1,72 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+.icon-block {
+  padding: 0 15px;
+}
+.icon-block .material-icons {
+	font-size: inherit;
+}
+.rt-logo-navbar {
+    height: 64px;
+    width: auto;
+}
+
+@media only screen and (min-width: 993px) {
+
+    .brand-sidebar {
+        position: fixed;
+        left: 0;
+        height: 64px;
+        width: 240px;
+        top: 0px;
+        z-index: 1 !important;
+        box-shadow: 0 2px 2px 0 rgba(0, 0, 0, 0.14), 0 1px 5px 0 rgba(0, 0, 0, 0.12), 0 3px 1px -2px rgba(0, 0, 0, 0.2);
+        -webkit-transition: .3s ease all;
+        -o-transition: .3s ease all;
+        -moz-transition: .3s ease all;
+        transition: .3s ease all;
+        -webkit-backface-visibility: hidden;
+        -moz-backface-visibility: hidden;
+        backface-visibility: hidden;
+    }
+
+    .brand-sidebar .logo-wrapper {
+        font-size: 36px;
+        padding: 21px 10px;
+        white-space: nowrap;
+        line-height: 17px !important;
+    }
+    h1.logo-wrapper{
+        margin: 0;
+    }
+
+    .rt-sidenav {
+        top:64px;
+        bottom: 64px;
+        width: 240px;
+
+    }
+
+    .rt-layout {
+        padding-left: 240px;
+    }
+}
+
+@media only screen and (max-width: 992px) {
+    .brand-sidebar {
+        display: none !important;
+    }
+}
+.rt-sidenav {
+    width: 240px;
+}
+
+.rt-content{
+    min-height: 55vh;
+}

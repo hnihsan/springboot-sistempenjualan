@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/parent :: head_link"></head>
+<body>
+<!-- Start Navigation -->
+<div id="header" th:replace="layout/parent :: header"></div>
+
+<!-- Start Section Content-->
+<section id="content" class="rt-layout rt-content">
+    <div class="container">
+        <br>
+        <div th:if="${not #lists.isEmpty(products)}">
+            <table>
+                <tr>
+                    <th>Nama</th>
+                    <th>Harga</th>
+                    <th>Stok (Pcs)</th>
+                    <th>Acion</th>
+                </tr>
+
+                <tr th:each="product : ${products}">
+                    <td th:text="${product.name}"></td>
+                    <td th:text="${product.price}"></td>
+                    <td th:text="${product.stock}"></td>
+                    <td>
+                        <a th:href="${'/Products/Ubah/'+product.id}">
+                            <i class="material-icons">edit</i>
+                        </a>
+                        <a th:href="${'/Products/Hapus/'+product.id}">
+                            <i class="material-icons">delete</i>
+                        </a>
+                    </td>
+                </tr>
+
+            </table>
+        </div>
+        <div th:if="${#lists.isEmpty(products)}">
+            <h5>Belum ada produk, <a th:href="${'/Products/Tambah'}">Tambah sekarang !</a></h5>
+        </div>
+    </div>
+</section>
+
+<div th:replace="layout/parent :: footer"></div>
+
+</body>
+</html>
+

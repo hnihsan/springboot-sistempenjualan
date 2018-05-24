@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout/parent :: head_link"></head>
+<body>
+<!-- Start Navigation -->
+<div id="header" th:replace="layout/parent :: header"></div>
+
+<!-- Start Section Content-->
+<section id="content" class="rt-layout rt-content">
+    <div class="container">
+        <br>
+        <form th:object="${products}" th:action="@{/Products/Tambah}" method="post">
+            <input type="hidden" th:field="*{id}">
+            <div class="row">
+                <div class="input-field col m6 s6">
+                    <input id="namaproduk" type="text" class="validate" required th:field="*{name}">
+                    <label for="namaproduk">Nama Produk</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col m6 s6">
+                    <input id="harga" type="number" class="validate" required th:field="*{price}">
+                    <label for="harga">Harga (Rp)</label>
+                </div>
+            </div>
+            <div class="row">
+                <div class="input-field col m6 s6">
+                    <input id="stok" type="number" class="validate" required th:field="*{stock}">
+                    <label for="stok">Jumlah Stok Barang</label>
+                </div>
+            </div>
+            <div class="row">
+                <input type="submit" value="Submit" class="btn">
+            </div>
+        </form>
+    </div>
+</section>
+
+<div th:replace="layout/parent :: footer"></div>
+
+</body>
+</html>
+
